@@ -124,7 +124,7 @@
 <body>
   <h2>Bilancia del nucleo</h2>
   <p class="label">
-    Aggiungi o togli <strong>protoni</strong> (rossi) e <strong>neutroni</strong> (grigi).  
+    Aggiungi o togli <strong>protoni</strong> (rossi) e <strong>particelle neutre</strong> (grigie).  
     Ogni particella aumenta di circa 1 unità la massa del nucleo.
   </p>
 
@@ -136,15 +136,15 @@
 
   <div class="number-panel">
     <div>Protoni: <span id="protonCount">0</span></div>
-    <div>Neutroni: <span id="neutronCount">0</span></div>
+    <div>Particelle neutre: <span id="neutronCount">0</span></div>
     <div>Massa totale (≈): <span id="massTotal">0</span> unità</div>
   </div>
 
   <div class="controls">
     <button type="button" onclick="changeProtons(1)">+ 1 protone</button>
     <button type="button" onclick="changeProtons(-1)">– 1 protone</button>
-    <button type="button" onclick="changeNeutrons(1)">+ 1 neutrone</button>
-    <button type="button" onclick="changeNeutrons(-1)">– 1 neutrone</button>
+    <button type="button" onclick="changeNeutrons(1)">+ 1 particella neutra</button>
+    <button type="button" onclick="changeNeutrons(-1)">– 1 particella neutra</button>
     <button type="button" onclick="resetAll()">Reset</button>
   </div>
 
@@ -178,7 +178,7 @@
         nucleusDiv.appendChild(b);
       }
 
-      // disegna neutroni grigi
+      // disegna particelle neutre grigie
       for (let i = 0; i < neutronNumber; i++) {
         const b = document.createElement("div");
         b.className = "ball neutron";
@@ -187,13 +187,13 @@
 
       // piccolo commento didattico
       if (mass === 0) {
-        hint.textContent = "Aggiungi protoni e neutroni per creare un nucleo.";
+        hint.textContent = "Aggiungi protoni e particelle neutre per creare un nucleo.";
       } else if (protonNumber === 1 && neutronNumber === 0) {
-        hint.textContent = "1 protone, 0 neutroni: massa ≈ 1, come nell'idrogeno-1.";
+        hint.textContent = "1 protone, 0 particelle neutre: massa ≈ 1, come nell'idrogeno-1.";
       } else if (protonNumber === neutronNumber) {
-        hint.textContent = "Protoni e neutroni sono uguali: massa ≈ " + mass + " (nucleo stabile).";
+        hint.textContent = "Protoni e particelle neutre sono uguali: massa ≈ " + mass + ".";
       } else {
-        hint.textContent = "La massa del nucleo cresce con protoni + neutroni = " + mass + ".";
+        hint.textContent = "La massa del nucleo cresce con protoni + particelle neutre = " + mass + ".";
       }
     }
 
